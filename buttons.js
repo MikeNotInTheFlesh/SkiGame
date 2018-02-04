@@ -4,7 +4,7 @@ author: Michael Grace
 
 function newGame2() {
   this.x = width / 2;
-  this.y = height / 2 - height / 4;
+  this.y = height / 2 - height / 5;
   this.w = width / 3;
   this.h = height / 10;
 
@@ -23,6 +23,12 @@ function newGame2() {
       text("Reset", this.x, this.y)
     } else {
     text("Start", this.x, this.y)
+    fill(255, 0, 255, 255);
+    textSize(width / 30);
+    strokeWeight(5);
+    stroke(0);
+    text('Use "w a s d" or arrow keys to play', this.x, height / 10);
+
     }
     pop(); // I don't think this does anything this pop is called elsewhere
   }
