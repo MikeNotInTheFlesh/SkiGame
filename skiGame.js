@@ -41,7 +41,8 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(displayWidth * 3 / 4, displayHeight * 3 / 4);
+	createCanvas(window.innerWidth, window.innerHeight);
+  // createCanvas(windowWidth * 3 / 4, windowHeight * 3 / 4);
 //  createCanvas(600, 400);
   frameRate(30);
   textFont("Impact, Charcoal, sans-serif");
@@ -87,7 +88,7 @@ function draw() {
     }
   }
 
-  mbutton.show();
+  mbutton.show(); //mode mbutton
   soundIcon.show();
 
   textFont("Impact, Charcoal, sans-serif");
