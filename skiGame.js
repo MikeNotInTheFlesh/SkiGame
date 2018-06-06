@@ -247,7 +247,8 @@ function mouseClicked() {
   }
 }
 
-function mouseIsPressed() {
+function mousePressed() {
+	console.log("mouse pressed at: " + mouseX + " " + mouseY);
   if (mouseX > width * 3 / 4) {
     moveX = height / 40;
   }
@@ -266,6 +267,7 @@ function mouseIsPressed() {
 }
 
 function mouseReleased(){
+	console.log("mouse released at: " + mouseX + " " + mouseY);
 	if (mbutton.mode == 'Liz') {
 		moveX = 0;
 		moveY = 0;
