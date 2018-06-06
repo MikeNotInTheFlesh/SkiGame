@@ -158,7 +158,10 @@ function draw() {
     if (!newGame) {
       ngame.show();
     }
-
+	
+	if(mouseIsPressed) {
+		mousePressed2();
+	}
 }
 
 function keyPressed() {
@@ -247,7 +250,7 @@ function mouseClicked() {
   }
 }
 
-function mousePressed() {
+function mousePressed2() {
 	console.log("mouse pressed at: " + mouseX + " " + mouseY);
   if (mouseX > width * 3 / 4) {
     moveX = height / 40;
