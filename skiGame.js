@@ -246,3 +246,28 @@ function mouseClicked() {
     soundIcon.change();
   }
 }
+
+function mouseIsPressed() {
+  if (mouseX > width * 3 / 4) {
+    moveX = height / 40;
+  }
+  else if (mouseX < width / 4) {
+    moveX = -height / 40;
+  }
+  else if (mouseY < height / 4) {
+    moveY = -width / 40;
+  }
+  else if (mouseY > height * 3 / 4) {
+    moveY = width / 40;
+  } else if (mouseX == width && mouseY == height) {
+    skier.px *= 0.10;
+    skier.py *= 0.10;
+  }
+}
+
+function mouseReleased(){
+	if (mbutton.mode == 'Liz') {
+		moveX = 0;
+		moveY = 0;
+	}
+}
