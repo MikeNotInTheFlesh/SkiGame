@@ -41,7 +41,7 @@ function preload(){
 }
 
 function setup() {
-	createCanvas(window.innerWidth, window.innerHeight);
+	createCanvas(window.innerWidth * 0.95, window.innerHeight * 0.95);
   // createCanvas(windowWidth * 3 / 4, windowHeight * 3 / 4);
 //  createCanvas(600, 400);
   frameRate(30);
