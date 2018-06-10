@@ -38,7 +38,7 @@ function preload(){
   soundOff = loadImage("soundOff.gif");
   gateSound = loadSound("gateSound.mp3");
   levelSound = loadSound("levelSound.mp3");
-  myFont = loadFont("impact.ttf");
+  myFont = loadFont("https://mikenotintheflesh.github.io/SkiGame/impact.ttf?raw=true");
 
 }
 
