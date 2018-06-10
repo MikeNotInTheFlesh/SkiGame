@@ -5,27 +5,34 @@ author: Michael Grace
 function Skier() {
   this.x = width / 2;
   this.y = height / 2;
-  this.r = width / 25;
+  if (width > height) {
+	  this.r = width / 20;
+  } else {
+	  this.r = height / 20;
+  }
+  
   this.px = 0;
   this.py = 0;
-  this.speed = 2 * height / 400;
+  this.speed = areaAdjust / 180;
 
 
   this.show = function() {
    // fill(255, 0, 0, 200);
    // ellipse(this.x, this.y, this.r * 2, this.r * 2)
-
+	dirImg = directionGraphic(skier);
+	image(dirImg, skier.x - skier.r, skier.y - skier.r, skier.r * 2, skier.r * 2);
+    
   }
 
   this.moveLR = function(dir = 1) {
 //    this.x += 1 * dir;
     this.px += this.speed * dir;
-    this.px *= 0.95;
+    this.px *= 0.955;
   }
   this.moveUD = function(dir = 1) {
 //    this.y += 1 * dir;
     this.py += this.speed * dir;
-    this.py *= 0.95;
+    this.py *= 0.955;
   }
 
   this.collision = function(sandTrap) {

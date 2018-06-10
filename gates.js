@@ -9,13 +9,14 @@ function Gate(x, y, direction) {
   // this.h = 10;
   this.direction = direction;
   this.timeleft = random(30) +200;
-  this.r = width / 120;
+  this.r = areaAdjust / 60;
   if (this.direction == 'left' || this.direction === 'right'){
-    this.w = width / 60;
-    this.h = height / 7;
-  } else {
-    this.w = height / 7;
-    this.h = width / 60;
+    this.w = areaAdjust / 40;
+    this.h = areaAdjust / 6;
+  } 
+  else {
+    this.w = areaAdjust / 6;
+    this.h = areaAdjust / 40;
   }
   this.show = function() {
 
@@ -26,31 +27,30 @@ function Gate(x, y, direction) {
     sort(sortedTime);
 
     noStroke();
-    fill(0, 255, 0, 100);
+    fill(0, 255, 0, 80);
     if (this.timeleft > 120) {
     rect(this.x - this.w/2, this.y - this.h / 2, this.w, this.h);
   } else if (this.timeleft % 10 < 5 && this.timeleft == sortedTime[0]) {
-
-  }else{
+	  // don't draw rect for blinking effect
+  } else {
     rect(this.x - this.w/2, this.y - this.h / 2, this.w, this.h);
   }
 
-
     if (this.direction == 'up') {
-      image(upFlag, this.x - this.r*6, this.y - this.r*7,
-        this.r * 14, this.r * 9);
-    } else if (this.direction == 'down') {
-      image(downFlag, this.x - this.r*6, this.y - this.r*2,
-        this.r * 14, this.r * 9);
-    } else if (this.direction == 'right') {
-      image(rightFlag, this.x - this.r*2, this.y - this.r * 6,
-        this.r * 9, this.r * 14);
-    } else if (this.direction == 'left') {
-      image(leftFlag, this.x - this.r*7, this.y - this.r*6,
-        this.r * 9, this.r * 14);
+		  image(upFlag, this.x - this.r*6, this.y - this.r*7,
+			this.r * 14, this.r * 9);
+		} else if (this.direction == 'down') {
+		  image(downFlag, this.x - this.r*6, this.y - this.r*2,
+			this.r * 14, this.r * 9);
+		} else if (this.direction == 'right') {
+		  image(rightFlag, this.x - this.r*2, this.y - this.r * 6,
+			this.r * 9, this.r * 14);
+		} else if (this.direction == 'left') {
+		  image(leftFlag, this.x - this.r*7, this.y - this.r*6,
+			this.r * 9, this.r * 14);
     }
+	
 }
-
 
   this.collision = function(ship) {
     var dirCheck = false;

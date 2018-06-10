@@ -5,7 +5,7 @@ author: Michael Grace
 function SandTrap(x, y) {
   this.x = x;
   this.y = y;
-  this.r = height / 10;
+  this.r = areaAdjust / 13;
 
   this.show = function() {
 
