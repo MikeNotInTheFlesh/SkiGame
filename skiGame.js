@@ -89,8 +89,8 @@ function draw() {
     sandTraps[i].show();
     if (sandTraps[i].collision(skier)) {
       score -= 0.5;
-      skier.px *= 0.60;
-      skier.py *= 0.60;
+      skier.px *= 0.65;
+      skier.py *= 0.65;
     }
   }
 
