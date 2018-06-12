@@ -13,7 +13,7 @@ function Skier() {
   
   this.px = 0;
   this.py = 0;
-  this.speed = areaAdjust / 220;
+  this.speed = areaAdjust / 240;
 
 
   this.show = function() {
@@ -27,12 +27,12 @@ function Skier() {
   this.moveLR = function(dir = 1) {
 //    this.x += 1 * dir;
     this.px += this.speed * dir;
-    this.px *= 0.95;
+    this.px *= 0.94;
   }
   this.moveUD = function(dir = 1) {
 //    this.y += 1 * dir;
     this.py += this.speed * dir;
-    this.py *= 0.95;
+    this.py *= 0.94;
   }
 
   this.collision = function(sandTrap) {
