@@ -24,20 +24,20 @@ var areaAdjustAdjust;
 
 
 function preload(){
-  img1 = loadImage("bski2.gif");
-  img2 = loadImage("bski3.gif");
-  img3 = loadImage("bski4.gif");
-  img4 = loadImage("bski5.gif");
-  upFlag = loadImage("upFlag.gif");
-  downFlag = loadImage("downFlag.gif");
-  rightFlag = loadImage("rightFlag.gif");
-  leftFlag = loadImage("leftFlag.gif");
-  ice = loadImage("ice.jpg");
-  sand = loadImage("sand2.gif");
-  soundOn = loadImage("soundOn.gif");
-  soundOff = loadImage("soundOff.gif");
-  gateSound = loadSound("gateSound.mp3");
-  levelSound = loadSound("levelSound.mp3");
+  img1 = loadImage("/data/bski2.gif");
+  img2 = loadImage("/data/bski3.gif");
+  img3 = loadImage("/data/bski4.gif");
+  img4 = loadImage("/data/bski5.gif");
+  upFlag = loadImage("/data/upFlag.gif");
+  downFlag = loadImage("/data/downFlag.gif");
+  rightFlag = loadImage("/data/rightFlag.gif");
+  leftFlag = loadImage("/data/leftFlag.gif");
+  ice = loadImage("/data/ice.jpg");
+  sand = loadImage("/data/sand2.gif");
+  soundOn = loadImage("/data/soundOn.gif");
+  soundOff = loadImage("/data/soundOff.gif");
+  gateSound = loadSound("/data/gateSound.mp3");
+  levelSound = loadSound("/data/levelSound.mp3");
   myFont = loadFont("https://mikenotintheflesh.github.io/SkiGame/impact.ttf?raw=true");
 
 }
