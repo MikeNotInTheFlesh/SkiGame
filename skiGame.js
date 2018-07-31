@@ -74,7 +74,7 @@ function setup() {
 function draw() {
   background(255);
   image(ice, 0, 0, width, height)
-  
+
   // if (width < height) {
 	  // push();
 	  // textSize(width / 10);
@@ -82,7 +82,7 @@ function draw() {
 	  // text("Please, \nplay game wideways, \nnot slimways,\nand reload", width / 2, height / 2);
 	  // return;
 	  // pop();
-	  
+
   // }
 
   for (var i = 0; i < sandTraps.length; i++) {
@@ -101,8 +101,8 @@ function draw() {
       levelSound.setVolume(0.3);
       levelSound.play();
     }
-    for (let trap of sandTraps) {
-      trap.r += 1;
+    for (var i = 0; i < sandTraps.length; i++) {
+      sandTraps[i].r += 1;
     }
   }
 
@@ -129,14 +129,14 @@ function draw() {
         gateSound.setVolume(0.2);
         gateSound.play();
       }
-      for (let gate of gates){
-        gate.timeleft += 60 - sandTraps.length * 5;
+      for (var j = 0; j < gates.length; j++){
+        gates[j].timeleft += 60 - sandTraps.length * 5;
       }
       // console.log(gates[i]);
       // console.log("Score: " + score);
       gates.splice(i, 1);
       gateScore += 1;
-      if (gates.length > 2 || score > 10000) { 
+      if (gates.length > 2 || score > 10000) {
 	  // replacing a gate
       append(gates, new Gate(random(width), random(height), random(way)));
       // If only one or two gates left, two will be added
@@ -153,7 +153,7 @@ function draw() {
       }
 
 
-}
+	}
 	skier.show();
 	score += sqrt(skier.px * skier.px + skier.py * skier.py) / 1000;
 
@@ -176,10 +176,10 @@ function draw() {
     if (!newGame) {
       ngame.show();
     }
-	
-	if(mouseIsPressed) {
-		mousePressed2();
-	}
+
+	// if(mouseIsPressed) {
+		// mousePressed2();
+	// }
 }
 
 function keyPressed() {
@@ -244,47 +244,72 @@ function addTime() {
   }
 }
 
-function mouseClicked() {
-	// Commenting this out to get rid of mode button
-  // if (dist(mode_button.x, mode_button.y, mouseX, mouseY) < mode_button.r) {
-	// mode_button.change();
-// } else 
-	if (!newGame &&
-    ngame.x - ngame.w / 2 < mouseX && mouseX < ngame.x + ngame.w / 2 &&
-    ngame.y - ngame.h / 2 < mouseY && mouseY < ngame.y + ngame.h / 2
-){
-  newGame = true;
-  pop();
-  loop();
-} else if (newGame && gates.length == 0 &&
-    ngame.x - ngame.w / 2 < mouseX && mouseX < ngame.x + ngame.w / 2 &&
-    ngame.y - ngame.h / 2 < mouseY && mouseY < ngame.y + ngame.h / 2
-          ) {
-  location.reload();
-  } else if (
-    soundIcon.x - soundIcon.r / 2 < mouseX
-    && mouseX < soundIcon.x + soundIcon.r / 2
-    && soundIcon.y - soundIcon.r / 2 < mouseY
-    && mouseY < soundIcon.y + soundIcon.r / 2
-  ) {
-    soundIcon.change();
-  }
-}
+// function mouseClicked() {
+	//// Commenting this out to get rid of mode button
+  //// if (dist(mode_button.x, mode_button.y, mouseX, mouseY) < mode_button.r) {
+	//// mode_button.change();
+//// } else
+	// if (!newGame &&
+    // ngame.x - ngame.w / 2 < mouseX && mouseX < ngame.x + ngame.w / 2 &&
+    // ngame.y - ngame.h / 2 < mouseY && mouseY < ngame.y + ngame.h / 2
+// ){
+  // newGame = true;
+  // pop();
+  // loop();
+// } else if (newGame && gates.length == 0 &&
+    // ngame.x - ngame.w / 2 < mouseX && mouseX < ngame.x + ngame.w / 2 &&
+    // ngame.y - ngame.h / 2 < mouseY && mouseY < ngame.y + ngame.h / 2
+          // ) {
+  // location.reload();
+  // }
+  // else
+  // if (
+    // soundIcon.x - soundIcon.r / 2 < mouseX
+    // && mouseX < soundIcon.x + soundIcon.r / 2
+    // && soundIcon.y - soundIcon.r / 2 < mouseY
+    // && mouseY < soundIcon.y + soundIcon.r / 2
+  // ) {
+    // soundIcon.change();
+  // }
+// }
 
-function mousePressed2() {
+function mousePressed() {
+  if (!newGame &&
+    ngame.x - ngame.w / 2 < mouseX && mouseX < ngame.x + ngame.w / 2 &&
+    ngame.y - ngame.h / 2 < mouseY && mouseY < ngame.y + ngame.h / 2
+  ){
+      newGame = true;
+      pop();
+      loop();
+  } else if (newGame && gates.length == 0 &&
+      ngame.x - ngame.w / 2 < mouseX && mouseX < ngame.x + ngame.w / 2 &&
+      ngame.y - ngame.h / 2 < mouseY && mouseY < ngame.y + ngame.h / 2
+            ) {
+    location.reload();
+    }
+
+    if (
+      soundIcon.x - soundIcon.r / 2 < mouseX
+      && mouseX < soundIcon.x + soundIcon.r / 2
+      && soundIcon.y - soundIcon.r / 2 < mouseY
+      && mouseY < soundIcon.y + soundIcon.r / 2
+    ) {
+      soundIcon.change();
+    }
+	
   if (mouseX > width * 3 / 4) {
     moveX = height / 40;
   }
   else if (mouseX < width / 4) {
     moveX = -height / 40;
   }
-  
+
   if (mouseY < height / 4) {
     moveY = -width / 40;
   }
   else if (mouseY > height * 3 / 4) {
     moveY = width / 40;
-  } 
+  }
   else if (mouseX == width && mouseY == height) {
     skier.px *= 0.10;
     skier.py *= 0.10;
@@ -297,4 +322,3 @@ function mousePressed2() {
 		// moveY = 0;
 	// }
 // }
-
