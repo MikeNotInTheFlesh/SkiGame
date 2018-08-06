@@ -288,6 +288,7 @@ function mousePressed() {
     location.reload();
     }
 
+// Turn sound on or off
     if (
       soundIcon.x - soundIcon.r / 2 < mouseX
       && mouseX < soundIcon.x + soundIcon.r / 2
@@ -296,18 +297,18 @@ function mousePressed() {
     ) {
       soundIcon.change();
     }
-	
-  if (mouseX > width * 3 / 4) {
+
+  if (mouseX > skier.x + width / 15) {
     moveX = height / 40;
   }
-  else if (mouseX < width / 4) {
+  else if (mouseX < skier.x - width / 15) {
     moveX = -height / 40;
   }
 
-  if (mouseY < height / 4) {
+  if (mouseY < skier.y - height / 15) {
     moveY = -width / 40;
   }
-  else if (mouseY > height * 3 / 4) {
+  else if (mouseY > skier.y + height / 15) {
     moveY = width / 40;
   }
   else if (mouseX == width && mouseY == height) {
