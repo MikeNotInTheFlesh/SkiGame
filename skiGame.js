@@ -298,17 +298,17 @@ function mousePressed() {
       soundIcon.change();
     }
 
-  if (mouseX > skier.x + width / 10) {
+  if (mouseX > skier.x + width / 15) {
     moveX = height / 40;
   }
-  else if (mouseX < skier.x - width / 10) {
+  else if (mouseX < skier.x - width / 15) {
     moveX = -height / 40;
   }
 
-  if (mouseY < skier.y - height / 10) {
+  if (mouseY < skier.y - height / 15) {
     moveY = -width / 40;
   }
-  else if (mouseY > skier.y + height / 10) {
+  else if (mouseY > skier.y + height / 15) {
     moveY = width / 40;
   }
   else if (mouseX == width && mouseY == height) {
